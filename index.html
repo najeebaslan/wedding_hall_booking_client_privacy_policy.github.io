@@ -7,7 +7,7 @@
     <style>
         :root {
             --primary-color: #5B25DA;
-            --background-color: #F1F7FF;
+            --background-color: #ffffff;
             --accent-color: #DBD6FE;
             --text-color: #333;
             --muted-text-color: #666;
@@ -16,6 +16,8 @@
             --white: #ffffff;
             --radius: 0.5rem;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --section-spacing: 1.5rem; /* Consistent spacing value */
+            --paragraph-spacing: 1rem; /* Consistent paragraph margin */
         }
 
         body {
@@ -23,16 +25,29 @@
             margin: 0;
             padding: 0;
             background-color: var(--background-color);
-            color: var(--text-color);
+            color:#374151;
             line-height: 1.6;
-            direction: ltr; /* Explicitly set LTR */
+            direction: ltr;
         }
 
         .header-container {
-            background-color: var(--primary-color);
-            color: var(--white);
+            background: linear-gradient(135deg, #5B25DA 20%, #9689FB 100%, #ffffff 100%);
+            color: white;
             padding: 3rem 1rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
+            pointer-events: none;
         }
 
         .icon-circle {
@@ -44,164 +59,182 @@
             border-radius: 50%;
             background-color: var(--white);
             color: var(--primary-color);
-            margin-bottom: 1rem;
+            margin-bottom: var(--section-spacing);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-         .icon-circle svg {
-             width: 2rem;
-             height: 2rem;
-         }
+        .icon-circle svg {
+            width: 2rem;
+            height: 2rem;
+            
+            
+        }
 
         .header-container h1 {
             font-size: 2.5rem;
             font-weight: bold;
-            margin-bottom: 0.5rem;
+            margin: 0 0 var(--paragraph-spacing) 0;
         }
 
         .header-container .subtitle {
             font-size: 0.875rem;
             opacity: 0.8;
-            margin-bottom: 1rem;
+            margin: 0 0 var(--paragraph-spacing) 0;
         }
 
         .header-container .intro-text {
             max-width: 40rem;
-            margin: 0 auto;
+            margin: var(--paragraph-spacing) auto 0;
             opacity: 0.9;
+            padding: 0 var(--section-spacing);
         }
 
         .body-container {
-            max-width: 50rem; /* Adjusted width for better readability */
+            max-width: 70rem;
             margin: 2rem auto;
-            padding: 1.5rem 2rem; /* Increased padding */
-            background-color: var(--background-color); /* Match body bg */
-            border-radius: 0; /* Remove rounding for body */
-            box-shadow: none; /* Remove shadow for body */
-            text-align: left; /* Ensure LTR alignment */
+            padding: var(--section-spacing) 2rem;
+            background-color: var(--background-color);
         }
 
         .policy-section {
-            margin-bottom: 2rem;
+            margin-bottom: var(--section-spacing);
+            padding-bottom: var(--section-spacing);
         }
 
         .section-header {
             display: flex;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: var(--paragraph-spacing);
         }
 
         .section-icon-wrapper {
-            width: 2.5rem; /* 40px */
-            height: 2.5rem; /* 40px */
+            width: 2.5rem;
+            height: 2.5rem;
             border-radius: 50%;
             background-color: var(--accent-color);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 1rem;
+            margin-right: var(--paragraph-spacing);
             flex-shrink: 0;
         }
 
-         .section-icon-wrapper svg {
-             width: 1.25rem; /* 20px */
-             height: 1.25rem; /* 20px */
-             color: var(--primary-color); /* Darker icon color */
-         }
+        .section-icon-wrapper svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: #333;
+        }
 
         .policy-section h2 {
-            font-size: 1.5rem; /* 24px */
+            font-size: 1.5rem;
             font-weight: bold;
-            margin: 0; /* Remove default margin */
+            margin: 0;
         }
 
         .policy-section p {
             color: var(--muted-text-color);
-            margin-bottom: 1rem;
+            margin: 0 0 var(--paragraph-spacing) 0;
+            padding: 0;
         }
 
         .policy-section .hint {
-            font-weight: 600; /* Semibold */
-            margin-bottom: 0.5rem;
-            color: var(--text-color); /* Make hint text less muted */
+            font-weight: 600;
+            margin: var(--paragraph-spacing) 0;
+            color: var(--text-color);
         }
 
         .policy-section ul {
             list-style: disc;
-            padding-left: 2.5rem; /* Indent list */
-            margin-bottom: 1rem;
+            padding-left: 2.5rem;
+            margin: 0 0 var(--paragraph-spacing) 0;
             color: var(--muted-text-color);
         }
 
         .policy-section li {
-            margin-bottom: 0.5rem;
+            margin-bottom: calc(var(--paragraph-spacing) / 2);
+        }
+
+        .policy-section li:last-child {
+            margin-bottom: 0;
         }
 
         .policy-section .note {
-            font-size: 0.875rem; /* 14px */
+            font-size: 0.875rem;
             font-style: italic;
             color: var(--muted-text-color);
-            margin-top: 0.5rem;
+            margin: var(--paragraph-spacing) 0 0 0;
+            padding: 0;
         }
 
         .divider {
             border: 0;
             height: 1px;
             background-color: var(--border-color);
-            margin: 2rem 0; /* 32px margin */
+            margin: var(--section-spacing) 0;
         }
 
         .card {
             background-color: var(--card-background);
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
-            padding: 1.5rem; /* 24px */
-            margin-bottom: 2rem; /* 32px */
+            padding: var(--section-spacing);
+            margin: var(--section-spacing) 0;
             box-shadow: var(--shadow);
         }
 
         .card-header {
             display: flex;
             align-items: center;
-            margin-bottom: 1rem; /* Add space below header */
+            margin-bottom: var(--paragraph-spacing);
         }
 
-         .card-title {
-            font-size: 1.25rem; /* 20px */
+        .card-title {
+            font-size: 1.25rem;
             font-weight: bold;
-         }
+            margin: 0;
+        }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
+            :root {
+                --section-spacing: 1.25rem;
+                --paragraph-spacing: 0.875rem;
+            }
+            
             .header-container h1 {
                 font-size: 2rem;
             }
             .body-container {
-                padding: 1.5rem 1rem;
+                padding: var(--section-spacing) 1rem;
             }
             .policy-section h2 {
                 font-size: 1.25rem;
             }
         }
-         @media (max-width: 480px) {
+        
+        @media (max-width: 480px) {
+            :root {
+                --section-spacing: 1rem;
+                --paragraph-spacing: 0.75rem;
+            }
+            
             .header-container {
                 padding: 2rem 1rem;
             }
-             .header-container h1 {
+            .header-container h1 {
                 font-size: 1.8rem;
             }
             .policy-section ul {
-                 padding-left: 1.5rem;
+                padding-left: 1.5rem;
             }
-         }
+        }
     </style>
 </head>
 <body>
 
     <div class="header-container">
         <div class="icon-circle">
-            <!-- SVG for ShieldCheck -->
-             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
         </div>
         <h1>Munasab Privacy Policy</h1>
         <p class="subtitle">Last updated on 2025/02/12</p>
@@ -214,8 +247,7 @@
         <div class="policy-section">
             <div class="section-header">
                 <div class="section-icon-wrapper">
-                     <!-- SVG for Info -->
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
                 </div>
                 <h2>Introduction</h2>
             </div>
@@ -226,8 +258,7 @@
         <div class="policy-section">
             <div class="section-header">
                 <div class="section-icon-wrapper">
-                     <!-- SVG for Database -->
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
                 </div>
                 <h2>Information We Collect</h2>
             </div>
@@ -240,13 +271,12 @@
                 <li>Service Information: If you're a service provider, we collect details about the services you offer.</li>
                 <li>Communication Data: When you communicate with other users through our chat feature, we store those messages.</li>
             </ul>
-             <hr class="divider" />
+            <hr class="divider" />
         </div>
 
         <div class="policy-section">
             <div class="section-header">
                 <div class="section-icon-wrapper">
-                    <!-- SVG for Cog -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path><path d="M12 2v2"></path><path d="M12 22v-2"></path><path d="m17 20.66-1-1.73"></path><path d="M11 10.27 7 3.34"></path><path d="m20.66 17-1.73-1"></path><path d="m3.34 7 1.73 1"></path><path d="M14 12h8"></path><path d="M2 12h2"></path><path d="m17 3.34-1 1.73"></path><path d="m11 13.73-4 6.93"></path><path d="m20.66 7-1.73 1"></path><path d="m3.34 17 1.73-1"></path></svg>
                 </div>
                 <h2>How We Use Your Information</h2>
@@ -262,14 +292,13 @@
                 <li>Analyze usage patterns to enhance user experience.</li>
                 <li>Respond to your inquiries and provide customer support.</li>
             </ul>
-             <hr class="divider" />
+            <hr class="divider" />
         </div>
 
         <div class="policy-section">
             <div class="section-header">
                 <div class="section-icon-wrapper">
-                    <!-- SVG for Share2 -->
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
                 </div>
                 <h2>Sharing Your Information</h2>
             </div>
@@ -283,13 +312,12 @@
                 <li>To protect the rights, property, or safety of our users or others.</li>
             </ul>
             <p class="note">We never sell your personal information to third parties for marketing purposes.</p>
-             <hr class="divider" />
+            <hr class="divider" />
         </div>
 
         <div class="policy-section">
             <div class="section-header">
                 <div class="section-icon-wrapper">
-                    <!-- SVG for Lock -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                 </div>
                 <h2>Security</h2>
@@ -307,14 +335,13 @@
             <hr class="divider" />
         </div>
 
-         <div class="card">
-             <div class="card-header">
-                 <div class="section-icon-wrapper">
-                     <!-- SVG for Trash2 -->
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
-                 </div>
-                 <h3 class="card-title">How to delete your account and data</h3>
-             </div>
+        <div class="card">
+            <div class="card-header">
+                <div class="section-icon-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                </div>
+                <h3 class="card-title">How to delete your account and data</h3>
+            </div>
             <p>If you would like to delete your account and its associated data, please follow these steps:</p>
             <ul>
                 <li>Sign in to your account in the Munasab app.</li>
@@ -323,9 +350,7 @@
                 <li>Follow the on-screen instructions.</li>
             </ul>
         </div>
-
     </div>
 
 </body>
 </html>
-
