@@ -1,357 +1,826 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Munasab Privacy Policy</title>
-  
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5B25DA',
+                        primaryLight: '#7E4AE8',
+                        secondary: '#F1F7FF',
+                        dark: '#1E1B4B',
+                        darkBg: '#0F172A',
+                        darkText: '#E2E8F0',
+                        darkSecondary: '#1E293B'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        arabic: ['IBM Plex Sans Arabic', 'sans-serif']
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #5B25DA;
-            --background-color: #ffffff;
-            --accent-color: #DBD6FE;
-            --text-color: #333;
-            --muted-text-color: #666;
-            --border-color: #e0e0e0;
-            --card-background: #ffffff;
-            --white: #ffffff;
-            --radius: 0.5rem;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --section-spacing: 1.5rem; /* Consistent spacing value */
-            --paragraph-spacing: 1rem; /* Consistent paragraph margin */
+        html {
+            scroll-behavior: smooth;
         }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color:#374151;
-            line-height: 1.6;
-            direction: ltr;
+        .gradient-header {
+            background: linear-gradient(135deg, #5B25DA 0%, #7E4AE8 100%);
         }
-
-        .header-container {
-            background: linear-gradient(135deg, #5B25DA 20%, #9689FB 100%, #ffffff 100%);
-            color: white;
-            padding: 3rem 1rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+        .dark .gradient-header {
+            background: linear-gradient(135deg, #3B1B8A 0%, #5B25DA 100%);
         }
-
-        .header-container::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
-            pointer-events: none;
-        }
-
-        .icon-circle {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 100%;
-            background-color: var(--background-color);
-            color: var(--primary-color);
-            margin-bottom: var(--section-spacing);
-            padding: var(--section-spacing);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .icon-circle svg {
-            width: 2rem;
-            height: 2rem;
-            
-            
-        }
-
-        .header-container h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin: 0 0 var(--paragraph-spacing) 0;
-        }
-
-        .header-container .subtitle {
-            font-size: 0.875rem;
-            opacity: 0.8;
-            margin: 0 0 var(--paragraph-spacing) 0;
-        }
-
-        .header-container .intro-text {
-            max-width: 40rem;
-            margin: var(--paragraph-spacing) auto 0;
-            opacity: 0.9;
-            padding: 0 var(--section-spacing);
-        }
-
-        .body-container {
-            max-width: 70rem;
-            margin: 2rem auto;
-            padding: var(--section-spacing) 2rem;
-            background-color: var(--background-color);
-        }
-
-        .policy-section {
-            margin-bottom: var(--section-spacing);
-            padding-bottom: var(--section-spacing);
-        }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: var(--paragraph-spacing);
-        }
-
-        .section-icon-wrapper {
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 50%;
-            background-color: var(--accent-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: var(--paragraph-spacing);
-            flex-shrink: 0;
-        }
-
-        .section-icon-wrapper svg {
-            width: 1.25rem;
-            height: 1.25rem;
-            color: #333;
-        }
-
-        .policy-section h2 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        .policy-section p {
-            color: var(--muted-text-color);
-            margin: 0 0 var(--paragraph-spacing) 0;
-            padding: 0;
-        }
-
-        .policy-section .hint {
-            font-weight: 600;
-            margin: var(--paragraph-spacing) 0;
-            color: var(--text-color);
-        }
-
-        .policy-section ul {
-            list-style: disc;
-            padding-left: 2.5rem;
-            margin: 0 0 var(--paragraph-spacing) 0;
-            color: var(--muted-text-color);
-        }
-
-        .policy-section li {
-            margin-bottom: calc(var(--paragraph-spacing) / 2);
-        }
-
-        .policy-section li:last-child {
-            margin-bottom: 0;
-        }
-
-        .policy-section .note {
-            font-size: 0.875rem;
-            font-style: italic;
-            color: var(--muted-text-color);
-            margin: var(--paragraph-spacing) 0 0 0;
-            padding: 0;
-        }
-
-        .divider {
-            border: 0;
+        .section-divider {
             height: 1px;
-            background-color: var(--border-color);
-            margin: var(--section-spacing) 0;
+            background: linear-gradient(90deg, rgba(91, 37, 218, 0.1) 0%, rgba(91, 37, 218, 0.3) 50%, rgba(91, 37, 218, 0.1) 100%);
+            margin: 3rem 0;
         }
-
-        .card {
-            background-color: var(--card-background);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: var(--section-spacing);
-            margin: var(--section-spacing) 0;
-            box-shadow: var(--shadow);
+        .dark .section-divider {
+            background: linear-gradient(90deg, rgba(126, 74, 232, 0.1) 0%, rgba(126, 74, 232, 0.3) 50%, rgba(126, 74, 232, 0.1) 100%);
         }
-
-        .card-header {
+        .icon-circle {
             display: flex;
             align-items: center;
-            margin-bottom: var(--paragraph-spacing);
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: rgba(91, 37, 218, 0.08);
+            color: #5B25DA;
+            margin-left: 1.5rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
         }
-
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin: 0;
+        [dir="ltr"] .icon-circle {
+            margin-left: 0;
+            margin-right: 1.5rem;
         }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            :root {
-                --section-spacing: 1.25rem;
-                --paragraph-spacing: 0.875rem;
-            }
-            
-            .header-container h1 {
-                font-size: 2rem;
-            }
-            .body-container {
-                padding: var(--section-spacing) 1rem;
-            }
-            .policy-section h2 {
-                font-size: 1.25rem;
-            }
+        .dark .icon-circle {
+            background-color: rgba(126, 74, 232, 0.15);
+            color: #7E4AE8;
         }
-        
-        @media (max-width: 480px) {
-            :root {
-                --section-spacing: 1rem;
-                --paragraph-spacing: 0.75rem;
-            }
-            
-            .header-container {
-                padding: 2rem 1rem;
-            }
-            .header-container h1 {
-                font-size: 1.8rem;
-            }
-            .policy-section ul {
-                padding-left: 1.5rem;
-            }
+        .policy-section:hover .icon-circle {
+            transform: scale(1.05);
+            background-color: rgba(91, 37, 218, 0.15);
+        }
+        .dark .policy-section:hover .icon-circle {
+            background-color: rgba(126, 74, 232, 0.25);
+        }
+        .highlight-box {
+            background: rgba(91, 37, 218, 0.03);
+            border-right: 4px solid #5B25DA;
+        }
+        [dir="ltr"] .highlight-box {
+            border-right: none;
+            border-left: 4px solid #5B25DA;
+        }
+        .dark .highlight-box {
+            background: rgba(126, 74, 232, 0.05);
+            border-right: 4px solid #7E4AE8;
+        }
+        [dir="ltr"] .dark .highlight-box {
+            border-right: none;
+            border-left: 4px solid #7E4AE8;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: #5B25DA;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(91, 37, 218, 0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 50;
+        }
+        [dir="ltr"] .back-to-top {
+            left: auto;
+            right: 2rem;
+        }
+        .dark .back-to-top {
+            background: #7E4AE8;
+            box-shadow: 0 4px 12px rgba(126, 74, 232, 0.3);
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            background: #7E4AE8;
+            transform: translateY(-3px);
+        }
+        .dark .back-to-top:hover {
+            background: #5B25DA;
+        }
+        .logo-container {
+            background-color: white;
+            border-radius: 16px;
+            padding: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        .dark .logo-container {
+            background-color: #1E293B;
+        }
+        .logo-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        .dark .logo-container:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        .language-switcher {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 50;
+            display: flex;
+            gap: 0.5rem;
+        }
+        [dir="ltr"] .language-switcher {
+            left: auto;
+            right: 1rem;
+        }
+        .theme-switcher {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 50;
+        }
+        [dir="ltr"] .theme-switcher {
+            right: auto;
+            left: 1rem;
+        }
+        .hidden-language {
+            display: none;
+        }
+        .dark body {
+            background-color: #0F172A;
+            color: #E2E8F0;
+        }
+        .dark .bg-white {
+            background-color: #1E293B;
+        }
+        .dark .text-gray-700 {
+            color: #CBD5E1;
+        }
+        .dark .bg-gray-50 {
+            background-color: #1E293B;
+        }
+        .dark .border-gray-200 {
+            border-color: #334155;
+        }
+        .dark .text-dark {
+            color: #E2E8F0;
+        }
+        .dark .bg-secondary {
+            background-color: #0F172A;
+        }
+        .dark .border-gray-100 {
+            border-color: #334155;
+        }
+        .dark .text-gray-600 {
+            color: #94A3B8;
+        }
+        .dark .text-gray-500 {
+            color: #94A3B8;
+        }
+        .dark .text-gray-400 {
+            color: #64748B;
+        }
+        /* RTL specific styles */
+        [dir="rtl"] .text-left {
+            text-align: right;
+        }
+        [dir="rtl"] .text-right {
+            text-align: left;
+        }
+        [dir="rtl"] .mr-3 {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        [dir="rtl"] .ml-3 {
+            margin-left: 0;
+            margin-right: 0.75rem;
+        }
+        [dir="rtl"] .md:text-right {
+            text-align: left;
+        }
+        [dir="rtl"] .md:text-left {
+            text-align: right;
+        }
+        [dir="rtl"] .flex-row-reverse {
+            flex-direction: row;
+        }
+        [dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+            margin-right: 1rem;
+            margin-left: 0;
+        }
+        [dir="rtl"] .pl-4 {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        [dir="rtl"] .pr-4 {
+            padding-right: 0;
+            padding-left: 1rem;
+        }
+        [dir="rtl"] .md:pl-8 {
+            padding-left: 0;
+            padding-right: 2rem;
+        }
+        [dir="rtl"] .md:pr-8 {
+            padding-right: 0;
+            padding-left: 2rem;
+        }
+        [dir="rtl"] .md:flex-row {
+            flex-direction: row-reverse;
+        }
+        /* New styles for better spacing */
+        .list-item-spacing {
+            margin-bottom: 1rem;
+        }
+        .list-icon-spacing {
+            margin-left: 0.75rem;
+            margin-right: 0.75rem;
+        }
+        [dir="rtl"] .list-icon-spacing {
+            margin-right: 0.75rem;
+            margin-left: 0.75rem;
+        }
+        .footer-link {
+            transition: color 0.2s ease;
+        }
+        .footer-link:hover {
+            color: #5B25DA;
+        }
+        .dark .footer-link:hover {
+            color: #7E4AE8;
+        }
+        /* Apply IBM Plex Sans Arabic to Arabic content */
+        [lang="ar"] body,
+        [lang="ar"] .ar {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
         }
     </style>
 </head>
-<body>
-
-    <div class="header-container">
-        <div class="icon-circle">
-             <img src="https://firebasestorage.googleapis.com/v0/b/weddinghallbooking-2ba28.appspot.com/o/app_logo%2Flogo_with_name.png?alt=media&token=9595463a-4801-4d08-ba77-2a41d2289d05" alt="App Logo" width="150" height="150">
-        </div>
-        <h1>Munasab Privacy Policy</h1>
-        <p class="subtitle">Last updated on 2025/02/12</p>
-        <p class="intro-text">
-            We value your privacy and are committed to protecting your personal information. This policy explains how we collect, use, and safeguard your data when you use our app.
-        </p>
+<body class="bg-secondary font-sans text-dark antialiased">
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button id="englishBtn" class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm font-medium flex items-center">
+            <span class="mr-1">EN</span>
+            <i class="fas fa-globe"></i>
+        </button>
+        <button id="arabicBtn" class="px-3 py-1 bg-primary text-white rounded-full text-sm font-medium flex items-center">
+            <span class="mr-1">AR</span>
+            <i class="fas fa-globe"></i>
+        </button>
     </div>
 
-    <div class="body-container">
-        <div class="policy-section">
-            <div class="section-header">
-                <div class="section-icon-wrapper">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                </div>
-                <h2>Introduction</h2>
-            </div>
-            <p>Welcome to our app. By using the app, you agree to these terms and conditions. Please read them carefully. Munasab is an innovative application that provides a comprehensive platform for managing and booking services related to events and occasions. Whether you're planning a wedding, corporate event, or any special occasion, Munasab aims to simplify the search and booking process while enabling service providers to manage their offerings effectively.</p>
-            <hr class="divider" />
-        </div>
-
-        <div class="policy-section">
-            <div class="section-header">
-                <div class="section-icon-wrapper">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-                </div>
-                <h2>Information We Collect</h2>
-            </div>
-            <p>We collect information you provide directly to us, such as your name, email address, and any other information you choose to provide.</p>
-            <p class="hint">Types of information we collect:</p>
-            <ul>
-                <li>Account Information: When you create an account, we collect your name, email address, phone number, and account type (client or owner).</li>
-                <li>Profile Information: Optional information such as gender and profile pictures that you choose to provide to enhance your experience.</li>
-                <li>Location Information: With your consent, we collect location data to provide location-based services.</li>
-                <li>Service Information: If you're a service provider, we collect details about the services you offer.</li>
-                <li>Communication Data: When you communicate with other users through our chat feature, we store those messages.</li>
-            </ul>
-            <hr class="divider" />
-        </div>
-
-        <div class="policy-section">
-            <div class="section-header">
-                <div class="section-icon-wrapper">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path><path d="M12 2v2"></path><path d="M12 22v-2"></path><path d="m17 20.66-1-1.73"></path><path d="M11 10.27 7 3.34"></path><path d="m20.66 17-1.73-1"></path><path d="m3.34 7 1.73 1"></path><path d="M14 12h8"></path><path d="M2 12h2"></path><path d="m17 3.34-1 1.73"></path><path d="m11 13.73-4 6.93"></path><path d="m20.66 7-1.73 1"></path><path d="m3.34 17 1.73-1"></path></svg>
-                </div>
-                <h2>How We Use Your Information</h2>
-            </div>
-            <p>We use the information we collect to provide and improve our services, to communicate with you, and to protect the app and its users.</p>
-            <p class="hint">Specifically, we use your information to:</p>
-            <ul>
-                <li>Provide our services and facilitate bookings between users and service providers.</li>
-                <li>Personalize your experience and offer content that matches your interests and preferences.</li>
-                <li>Improve and develop new features for our app.</li>
-                <li>Send notifications about bookings, offers, and updates.</li>
-                <li>Ensure the security and proper functioning of our services.</li>
-                <li>Analyze usage patterns to enhance user experience.</li>
-                <li>Respond to your inquiries and provide customer support.</li>
-            </ul>
-            <hr class="divider" />
-        </div>
-
-        <div class="policy-section">
-            <div class="section-header">
-                <div class="section-icon-wrapper">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-                </div>
-                <h2>Sharing Your Information</h2>
-            </div>
-            <p>We do not share your personal information with third parties except as described in this policy or with your consent.</p>
-            <p class="hint">We may share information in the following circumstances:</p>
-            <ul>
-                <li>With service providers who need access to such information to carry out work on our behalf.</li>
-                <li>Between users and service providers to facilitate bookings and communications.</li>
-                <li>When required by law or legal process.</li>
-                <li>In connection with a merger, sale, or acquisition of all or a portion of our company.</li>
-                <li>To protect the rights, property, or safety of our users or others.</li>
-            </ul>
-            <p class="note">We never sell your personal information to third parties for marketing purposes.</p>
-            <hr class="divider" />
-        </div>
-
-        <div class="policy-section">
-            <div class="section-header">
-                <div class="section-icon-wrapper">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                </div>
-                <h2>Security</h2>
-            </div>
-            <p>We take reasonable measures to protect your personal information from loss, theft, misuse, and unauthorized access.</p>
-            <p class="hint">Our security measures include:</p>
-            <ul>
-                <li>Encryption of sensitive data both in transit and at rest.</li>
-                <li>Regular security assessments and audits.</li>
-                <li>Access controls that limit who can access user information.</li>
-                <li>Employee training on privacy and security practices.</li>
-                <li>Secure authentication methods including verification codes.</li>
-            </ul>
-            <p class="note">While we implement safeguards designed to protect your information, no security system is impenetrable. We cannot guarantee the security of information you transmit to us, and you do so at your own risk.</p>
-            <hr class="divider" />
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <div class="section-icon-wrapper">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
-                </div>
-                <h3 class="card-title">How to delete your account and data</h3>
-            </div>
-            <p>If you would like to delete your account and its associated data, please follow these steps:</p>
-            <ul>
-                <li>Sign in to your account in the Munasab app.</li>
-                <li>Go to Account Settings.</li>
-                <li>Select "Delete Account."</li>
-                <li>Follow the on-screen instructions.</li>
-            </ul>
-        </div>
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+        <button id="themeToggle" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:block text-yellow-300"></i>
+        </button>
     </div>
 
+    <!-- Header Section -->
+    <header class="gradient-header py-20 px-4">
+        <div class="max-w-5xl mx-auto text-center text-white">
+            <div class="flex justify-center mb-8">
+                <div class="logo-container">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/weddinghallbooking-2ba28.appspot.com/o/app_logo%2Flogo_with_name.png?alt=media&token=9595463a-4801-4d08-ba77-2a41d2289d05" 
+                         alt="Munasab Logo" 
+                         width="180" 
+                         class="h-auto">
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight en hidden-language">Privacy Policy</h1>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight ar">سياسة الخصوصية</h1>
+            <p class="text-sm opacity-90 mb-8 tracking-wide en hidden-language">Last updated on February 12, 2025</p>
+            <p class="text-sm opacity-90 mb-8 tracking-wide ar">آخر تحديث في 12 فبراير 2025</p>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed opacity-90 en hidden-language">
+                We value your privacy and are committed to protecting your personal information. 
+                This policy explains how we collect, use, and safeguard your data when you use our app.
+            </p>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed opacity-90 ar">
+                نحن نقدر خصوصيتك وملتزمون بحماية معلوماتك الشخصية. توضح هذه السياسة كيف نجمع ونستخدم ونحمي بياناتك عند استخدامك لتطبيقنا.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto py-16 px-6">
+        <!-- Introduction Section -->
+        <section class="policy-section mb-16">
+            <div class="flex items-start mb-8">
+                <div class="icon-circle">
+                    <i class="fas fa-info-circle text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark mb-4 en hidden-language">Introduction</h2>
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark mb-4 ar">مقدمة</h2>
+                    <p class="text-gray-700 mb-6 leading-relaxed en hidden-language">
+                        Welcome to our app. By using the app, you agree to these terms and conditions. Please read them carefully.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed ar">
+                        مرحبًا بكم في تطبيقنا. باستخدام التطبيق، فإنك توافق على هذه الشروط والأحكام. يرجى قراءتها بعناية.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed en hidden-language">
+                        Munasab is an innovative application that provides a comprehensive platform for managing and booking services related to events and occasions. Whether you're planning a wedding, corporate event, or any special occasion, Munasab aims to simplify the search and booking process while enabling service providers to manage their offerings effectively.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed ar">
+                        مناسبة هو تطبيق مبتكر يوفر منصة شاملة لإدارة وحجز الخدمات المتعلقة بالمناسبات والأحداث. سواء كنت تخطط لحفل زفاف أو حدث شركة أو أي مناسبة خاصة، يهدف مناسبة إلى تبسيط عملية البحث والحجز مع تمكين مقدمي الخدمات من إدارة عروضهم بشكل فعال.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+
+        <!-- Information We Collect Section -->
+        <section class="policy-section mb-16" id="information-collected">
+            <div class="flex items-start mb-8">
+                <div class="icon-circle">
+                    <i class="fas fa-database text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark mb-4 en hidden-language">Information We Collect</h2>
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark mb-4 ar">المعلومات التي نجمعها</h2>
+                    <p class="text-gray-700 mb-6 leading-relaxed en hidden-language">
+                        We collect information you provide directly to us, such as your name, email address, and any other information you choose to provide.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed ar">
+                        نجمع المعلومات التي تقدمها لنا مباشرة، مثل اسمك وعنوان بريدك الإلكتروني وأي معلومات أخرى تختار تقديمها.
+                    </p>
+                    <div class="highlight-box p-6 mb-6">
+                        <p class="font-medium text-dark mb-4 en hidden-language">Types of information we collect:</p>
+                        <p class="font-medium text-dark mb-4 ar">أنواع المعلومات التي نجمعها:</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start list-item-spacing">
+                                <span class="bg-primary bg-opacity-10 text-primary rounded-full w-6 h-6 flex items-center justify-center list-icon-spacing mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-circle text-xs"></i>
+                                </span>
+                                <span class="en hidden-language"><span class="font-medium">Account Information:</span> When you create an account, we collect your name, email address, phone number, and account type (client or owner).</span>
+                                <span class="ar"><span class="font-medium">معلومات الحساب:</span> عند إنشاء حساب، نجمع اسمك وعنوان بريدك الإلكتروني ورقم هاتفك ونوع الحساب (عميل أو مالك).</span>
+                            </li>
+                            <li class="flex items-start list-item-spacing">
+                                <span class="bg-primary bg-opacity-10 text-primary rounded-full w-6 h-6 flex items-center justify-center list-icon-spacing mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-circle text-xs"></i>
+                                </span>
+                                <span class="en hidden-language"><span class="font-medium">Profile Information:</span> Optional information such as gender and profile pictures that you choose to provide to enhance your experience.</span>
+                                <span class="ar"><span class="font-medium">معلومات الملف الشخصي:</span> معلومات اختيارية مثل الجنس وصور الملف الشخصي التي تختار تقديمها لتحسين تجربتك.</span>
+                            </li>
+                            <li class="flex items-start list-item-spacing">
+                                <span class="bg-primary bg-opacity-10 text-primary rounded-full w-6 h-6 flex items-center justify-center list-icon-spacing mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-circle text-xs"></i>
+                                </span>
+                                <span class="en hidden-language"><span class="font-medium">Location Information:</span> With your consent, we collect location data to provide location-based services.</span>
+                                <span class="ar"><span class="font-medium">معلومات الموقع:</span> بموافقتك، نجمع بيانات الموقع لتقديم خدمات تعتمد على الموقع.</span>
+                            </li>
+                            <li class="flex items-start list-item-spacing">
+                                <span class="bg-primary bg-opacity-10 text-primary rounded-full w-6 h-6 flex items-center justify-center list-icon-spacing mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-circle text-xs"></i>
+                                </span>
+                                <span class="en hidden-language"><span class="font-medium">Service Information:</span> If you're a service provider, we collect details about the services you offer.</span>
+                                <span class="ar"><span class="font-medium">معلومات الخدمة:</span> إذا كنت مقدم خدمة، نجمع تفاصيل عن الخدمات التي تقدمها.</span>
+                            </li>
+                            <li class="flex items-start list-item-spacing">
+                                <span class="bg-primary bg-opacity-10 text-primary rounded-full w-6 h-6 flex items-center justify-center list-icon-spacing mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-circle text-xs"></i>
+                                </span>
+                                <span class="en hidden-language"><span class="font-medium">Communication Data:</span> When you communicate with other users through our chat feature, we store those messages.</span>
+                                <span class="ar"><span class="font-medium">بيانات الاتصال:</span> عندما تتواصل مع مستخدمين آخرين من خلال ميزة الدردشة الخاصة بنا، نقوم بتخزين تلك الرسائل.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+
+        <!-- How We Use Your Information Section -->
+        <section class="policy-section mb-16" id="information-use">
+            <div class="flex items-start mb-8">
+                <div class="icon-circle">
+                    <i class="fas fa-cogs text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark mb-4 en hidden-language">How We Use Your Information</h2>
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark mb-4 ar">كيف نستخدم معلوماتك</h2>
+                    <p class="text-gray-700 mb-6 leading-relaxed en hidden-language">
+                        We use the information we collect to provide and improve our services, to communicate with you, and to protect the app and its users.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed ar">
+                        نستخدم المعلومات التي نجمعها لتقديم وتحسين خدماتنا، وللتواصل معك، ولحماية التطبيق ومستخدميه.
+                    </p>
+                    <div class="bg-gray-50 rounded-xl p-6 mb-6">
+                        <p class="font-medium text-dark mb-4 en hidden-language">Specifically, we use your information to:</p>
+                        <p class="font-medium text-dark mb-4 ar">على وجه التحديد، نستخدم معلوماتك لـ:</p>
+                        <ul class="grid md:grid-cols-2 gap-4">
+                            <li class="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                                <span class="bg-primary bg-opacity-10 text-primary rounded-full w-6 h-6 flex items-center justify-center list-icon-spacing mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </span>
+                                <span class="en hidden-language">Provide our services and facilitate bookings between users and service providers</span>
+                                <span class="ar">تقديم خدماتنا وتسهيل الحجوزات بين المستخدمين ومقدمي الخدمات</span>
+                            </li>
+                            <li class="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                                <span class="bg-primary bg-opacity-10 text-primary rounded-full w-6 h-6 flex items-center justify-center list-icon-spacing mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </span>
+                                <span class="en hidden-language">Personalize your experience and offer content that matches your interests</span>
+                                <span class="ar">تخصيص تجربتك وعرض محتوى يتناسب مع اهتماماتك</span>
+                            </li>
+                            <li class="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                                <span class="bg-primary bg-opacity-10 text-primary rounded-full w-6 h-6 flex items-center justify-center list-icon-spacing mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </span>
+                                <span class="en hidden-language">Improve and develop new features for our app</span>
+                                <span class="ar">تحسين وتطوير ميزات جديدة لتطبيقنا</span>
+                            </li>
+                            <li class="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                                <span class="bg-primary bg-opacity-10 text-primary rounded-full w-6 h-6 flex items-center justify-center list-icon-spacing mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </span>
+                                <span class="en hidden-language">Send notifications about bookings, offers, and updates</span>
+                                <span class="ar">إرسال إشعارات حول الحجوزات والعروض والتحديثات</span>
+                            </li>
+                            <li class="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                                <span class="bg-primary bg-opacity-10 text-primary rounded-full w-6 h-6 flex items-center justify-center list-icon-spacing mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </span>
+                                <span class="en hidden-language">Ensure the security and proper functioning of our services</span>
+                                <span class="ar">ضمان أمان وسير عمل خدماتنا بشكل صحيح</span>
+                            </li>
+                            <li class="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                                <span class="bg-primary bg-opacity-10 text-primary rounded-full w-6 h-6 flex items-center justify-center list-icon-spacing mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </span>
+                                <span class="en hidden-language">Analyze usage patterns to enhance user experience</span>
+                                <span class="ar">تحليل أنماط الاستخدام لتحسين تجربة المستخدم</span>
+                            </li>
+                            <li class="flex items-start bg-white p-4 rounded-lg shadow-sm md:col-span-2">
+                                <span class="bg-primary bg-opacity-10 text-primary rounded-full w-6 h-6 flex items-center justify-center list-icon-spacing mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-check text-xs"></i>
+                                </span>
+                                <span class="en hidden-language">Respond to your inquiries and provide customer support</span>
+                                <span class="ar">الرد على استفساراتك وتقديم دعم العملاء</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+
+        <!-- Sharing Your Information Section -->
+        <section class="policy-section mb-16" id="information-sharing">
+            <div class="flex items-start mb-8">
+                <div class="icon-circle">
+                    <i class="fas fa-share-alt text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark mb-4 en hidden-language">Sharing Your Information</h2>
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark mb-4 ar">مشاركة معلوماتك</h2>
+                    <p class="text-gray-700 mb-6 leading-relaxed en hidden-language">
+                        We do not share your personal information with third parties except as described in this policy or with your consent.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed ar">
+                        نحن لا نشارك معلوماتك الشخصية مع أطراف ثالثة إلا كما هو موضح في هذه السياسة أو بموافقتك.
+                    </p>
+                    <div class="mb-6">
+                        <p class="font-medium text-dark mb-4 en hidden-language">We may share information in the following circumstances:</p>
+                        <p class="font-medium text-dark mb-4 ar">قد نشارك المعلومات في الحالات التالية:</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start list-item-spacing">
+                                <span class="bg-primary bg-opacity-10 text-primary rounded-full w-6 h-6 flex items-center justify-center list-icon-spacing mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-arrow-right text-xs"></i>
+                                </span>
+                                <span class="en hidden-language">With service providers who need access to such information to carry out work on our behalf</span>
+                                <span class="ar">مع مقدمي الخدمات الذين يحتاجون إلى الوصول إلى هذه المعلومات للقيام بعمل نيابة عنا</span>
+                            </li>
+                            <li class="flex items-start list-item-spacing">
+                                <span class="bg-primary bg-opacity-10 text-primary rounded-full w-6 h-6 flex items-center justify-center list-icon-spacing mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-arrow-right text-xs"></i>
+                                </span>
+                                <span class="en hidden-language">Between users and service providers to facilitate bookings and communications</span>
+                                <span class="ar">بين المستخدمين ومقدمي الخدمات لتسهيل الحجوزات والاتصالات</span>
+                            </li>
+                            <li class="flex items-start list-item-spacing">
+                                <span class="bg-primary bg-opacity-10 text-primary rounded-full w-6 h-6 flex items-center justify-center list-icon-spacing mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-arrow-right text-xs"></i>
+                                </span>
+                                <span class="en hidden-language">When required by law or legal process</span>
+                                <span class="ar">عندما يقتضي القانون أو الإجراءات القانونية ذلك</span>
+                            </li>
+                            <li class="flex items-start list-item-spacing">
+                                <span class="bg-primary bg-opacity-10 text-primary rounded-full w-6 h-6 flex items-center justify-center list-icon-spacing mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-arrow-right text-xs"></i>
+                                </span>
+                                <span class="en hidden-language">In connection with a merger, sale, or acquisition of all or a portion of our company</span>
+                                <span class="ar">في حالة الاندماج أو البيع أو الاستحواذ على كل أو جزء من شركتنا</span>
+                            </li>
+                            <li class="flex items-start list-item-spacing">
+                                <span class="bg-primary bg-opacity-10 text-primary rounded-full w-6 h-6 flex items-center justify-center list-icon-spacing mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-arrow-right text-xs"></i>
+                                </span>
+                                <span class="en hidden-language">To protect the rights, property, or safety of our users or others</span>
+                                <span class="ar">لحماية حقوق أو ممتلكات أو سلامة مستخدمينا أو الآخرين</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-primary bg-opacity-5 rounded-xl border border-primary border-opacity-20">
+                        <div class="flex items-start">
+                            <div class="ml-3 text-primary">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <p class="text-primary font-medium en hidden-language">
+                                We never sell your personal information to third parties for marketing purposes
+                            </p>
+                            <p class="text-primary font-medium ar">
+                                نحن لا نبيع معلوماتك الشخصية لأطراف ثالثة لأغراض التسويق أبدًا
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+
+        <!-- Security Section -->
+        <section class="policy-section mb-16" id="security">
+            <div class="flex items-start mb-8">
+                <div class="icon-circle">
+                    <i class="fas fa-shield-alt text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark mb-4 en hidden-language">Security</h2>
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark mb-4 ar">الأمان</h2>
+                    <p class="text-gray-700 mb-6 leading-relaxed en hidden-language">
+                        We take reasonable measures to protect your personal information from loss, theft, misuse, and unauthorized access.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed ar">
+                        نتخذ إجراءات معقولة لحماية معلوماتك الشخصية من الضياع أو السرقة أو سوء الاستخدام أو الوصول غير المصرح به.
+                    </p>
+                    <div class="mb-6">
+                        <p class="font-medium text-dark mb-4 en hidden-language">Our security measures include:</p>
+                        <p class="font-medium text-dark mb-4 ar">تشمل تدابير الأمان لدينا:</p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center list-icon-spacing text-primary">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                    <h3 class="font-medium en hidden-language">Data Encryption</h3>
+                                    <h3 class="font-medium ar">تشفير البيانات</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm en hidden-language">Encryption of sensitive data both in transit and at rest</p>
+                                <p class="text-gray-600 text-sm ar">تشفير البيانات الحساسة أثناء النقل وعند التخزين</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center list-icon-spacing text-primary">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <h3 class="font-medium en hidden-language">Security Audits</h3>
+                                    <h3 class="font-medium ar">تدقيق الأمان</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm en hidden-language">Regular security assessments and audits</p>
+                                <p class="text-gray-600 text-sm ar">تقييمات ومراجعات أمنية منتظمة</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center list-icon-spacing text-primary">
+                                        <i class="fas fa-user-shield"></i>
+                                    </div>
+                                    <h3 class="font-medium en hidden-language">Access Control</h3>
+                                    <h3 class="font-medium ar">التحكم في الوصول</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm en hidden-language">Limiting who can access user information</p>
+                                <p class="text-gray-600 text-sm ar">تقييد من يمكنه الوصول إلى معلومات المستخدم</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center list-icon-spacing text-primary">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <h3 class="font-medium en hidden-language">Employee Training</h3>
+                                    <h3 class="font-medium ar">تدريب الموظفين</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm en hidden-language">Training on privacy and security practices</p>
+                                <p class="text-gray-600 text-sm ar">تدريب على ممارسات الخصوصية والأمان</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-xl border border-gray-200">
+                        <div class="flex items-start">
+                            <div class="ml-3 text-gray-500">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <p class="text-gray-600 en hidden-language">
+                                <span class="font-medium">Note:</span> While we implement safeguards designed to protect your information, no security system is impenetrable. 
+                                We cannot guarantee the security of information you transmit to us, and you do so at your own risk.
+                            </p>
+                            <p class="text-gray-600 ar">
+                                <span class="font-medium">ملاحظة:</span> بينما ننفذ ضمانات مصممة لحماية معلوماتك، لا يوجد نظام أمان غير قابل للاختراق. لا يمكننا ضمان أمان المعلومات التي ترسلها إلينا، وتقوم بذلك على مسؤوليتك الخاصة.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 py-12 border-t border-gray-200 dark:border-gray-700">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/weddinghallbooking-2ba28.appspot.com/o/app_logo%2Flogo_with_name.png?alt=media&token=9595463a-4801-4d08-ba77-2a41d2289d05" 
+                             alt="Munasab Logo" 
+                             width="120" 
+                             class="h-auto ml-3">
+                    </div>
+                    <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm max-w-xs en hidden-language">
+                        Your trusted platform for event services and bookings.
+                    </p>
+                    <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm max-w-xs ar">
+                        منصتك الموثوقة لخدمات الأحداث والحجوزات.
+                    </p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-primaryLight transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-primaryLight transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-primaryLight transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-primaryLight transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 en hidden-language">Company</h3>
+                        <h3 class="text-lg font-semibold mb-4 ar">الشركة</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primaryLight footer-link en hidden-language">About Us</a></li>
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primaryLight footer-link ar">من نحن</a></li>
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primaryLight footer-link en hidden-language">Careers</a></li>
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primaryLight footer-link ar">وظائف</a></li>
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primaryLight footer-link en hidden-language">Blog</a></li>
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primaryLight footer-link ar">المدونة</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 en hidden-language">Support</h3>
+                        <h3 class="text-lg font-semibold mb-4 ar">الدعم</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primaryLight footer-link en hidden-language">Help Center</a></li>
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primaryLight footer-link ar">مركز المساعدة</a></li>
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primaryLight footer-link en hidden-language">Contact Us</a></li>
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primaryLight footer-link ar">اتصل بنا</a></li>
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primaryLight footer-link en hidden-language">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primaryLight footer-link ar">سياسة الخصوصية</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 en hidden-language">Contact</h3>
+                        <h3 class="text-lg font-semibold mb-4 ar">اتصل بنا</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-gray-400 mt-1 mr-2 text-sm"></i>
+                                <span class="text-gray-500 dark:text-gray-400 text-sm en hidden-language">Riyadh, Saudi Arabia</span>
+                                <span class="text-gray-500 dark:text-gray-400 text-sm ar">الرياض، المملكة العربية السعودية</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope text-gray-400 mt-1 mr-2 text-sm"></i>
+                                <a href="mailto:info@munasab.com" class="text-gray-500 dark:text-gray-400 text-sm hover:text-primary dark:hover:text-primaryLight footer-link">info@munasab.com</a>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone-alt text-gray-400 mt-1 mr-2 text-sm"></i>
+                                <a href="tel:+966112345678" class="text-gray-500 dark:text-gray-400 text-sm hover:text-primary dark:hover:text-primaryLight footer-link">+966 11 234 5678</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 md:mb-0 en hidden-language">© 2025 Munasab. All rights reserved.</p>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 md:mb-0 ar">© 2025 مناسبة. جميع الحقوق محفوظة.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primaryLight text-sm footer-link en hidden-language">Terms of Service</a>
+                    <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primaryLight text-sm footer-link ar">شروط الخدمة</a>
+                    <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primaryLight text-sm footer-link en hidden-language">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primaryLight text-sm footer-link ar">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Language switching functionality
+        const englishBtn = document.getElementById('englishBtn');
+        const arabicBtn = document.getElementById('arabicBtn');
+        
+        englishBtn.addEventListener('click', () => {
+            document.documentElement.lang = 'en';
+            document.documentElement.dir = 'ltr';
+            document.querySelectorAll('.en').forEach(el => el.classList.remove('hidden-language'));
+            document.querySelectorAll('.ar').forEach(el => el.classList.add('hidden-language'));
+            englishBtn.classList.remove('bg-gray-200', 'text-gray-700');
+            englishBtn.classList.add('bg-primary', 'text-white');
+            arabicBtn.classList.remove('bg-primary', 'text-white');
+            arabicBtn.classList.add('bg-gray-200', 'text-gray-700');
+            localStorage.setItem('language', 'en');
+        });
+        
+        arabicBtn.addEventListener('click', () => {
+            document.documentElement.lang = 'ar';
+            document.documentElement.dir = 'rtl';
+            document.querySelectorAll('.ar').forEach(el => el.classList.remove('hidden-language'));
+            document.querySelectorAll('.en').forEach(el => el.classList.add('hidden-language'));
+            arabicBtn.classList.remove('bg-gray-200', 'text-gray-700');
+            arabicBtn.classList.add('bg-primary', 'text-white');
+            englishBtn.classList.remove('bg-primary', 'text-white');
+            englishBtn.classList.add('bg-gray-200', 'text-gray-700');
+            localStorage.setItem('language', 'ar');
+        });
+        
+        // Set default to Arabic
+        const savedLanguage = localStorage.getItem('language') || 'ar';
+        if (savedLanguage === 'en') {
+            englishBtn.click();
+        } else {
+            arabicBtn.click();
+        }
+        
+        // Theme switching functionality
+        const themeToggle = document.getElementById('themeToggle');
+        
+        themeToggle.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+        
+        // Set default to light mode
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
